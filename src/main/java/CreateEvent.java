@@ -270,13 +270,6 @@ public class CreateEvent extends loginPromoter
 	  Thread.sleep(3000);
       //next//
       driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/button")).click();
-	 
-		 
-		 
-		 
-		 
-		 
-		 
 		 
 	 }
 	 //3 step dinosour//
@@ -370,20 +363,6 @@ public class CreateEvent extends loginPromoter
       //next//
       driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/button")).click();
 	 
-		 
-		 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	 }
 	 
 	 //4 step relation father//
@@ -472,6 +451,7 @@ public class CreateEvent extends loginPromoter
 	   //  driver.findElement(By.xpath("//body/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/a[1]")).click();
 	     driver.findElement(By.xpath("//li[contains(text(),'Test_applination')]")).click();
 	     Thread.sleep(1000);
+	     //git test//
 	     driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[2]/div/div/button")).click();
 	//Details field---
 	     //Pool field//
