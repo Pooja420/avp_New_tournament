@@ -3,14 +3,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -33,6 +39,7 @@ public class New_Tournament  {
     		//driver.get("https://www.google.com/");
     		//driver.get("https://avp-league-management.herokuapp.com/");
     		driver.get("https://promoter.applination.in/");
+    		//driver.get("http://34.130.141.211/");
     		Thread.sleep(2000);
     		driver.manage().window().maximize();
     		
@@ -51,10 +58,10 @@ public class New_Tournament  {
     		    driver.findElement(By.xpath("//div[contains(text(),'+ New Tournament')]")).click();
     		   // driver.findElement(By.xpath=//div[contains(text(),'+ New Tournament')])).click();
     		    //event name//
-    		    driver.findElement(By.cssSelector(".event-input")).sendKeys("Gamer Sky_Event");
+    		    driver.findElement(By.cssSelector(".event-input")).sendKeys("Demo1");
     		    driver.findElement(By.id("exampleFormControlTextarea1")).click();
     		    //description//
-  		    driver.findElement(By.id("exampleFormControlTextarea1")).sendKeys("Sky_event");
+  		    driver.findElement(By.id("exampleFormControlTextarea1")).sendKeys("Event");
   		    Thread.sleep(2000);
 //    		    JavascriptExecutor js = (JavascriptExecutor) driver;
 //    			js.executeScript("arguments[0].scrollIntoView(true)",driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/img[1]")));
@@ -65,10 +72,16 @@ public class New_Tournament  {
               // Thread.sleep(2000);
          
                //Date code----
-              
-              driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/25/2022");
+//               SimpleDateFormat formatter= new SimpleDateFormat("MM/dd/yyyy");
+//               Date date = new Date(System.currentTimeMillis());
+               LocalDate date1 =  LocalDate.now().plusDays(5);
+               LocalDate date2 =  LocalDate.now().plusDays(7);
+               
+//               System.out.println(date1.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+//               System.out.println(formatter.format(date));
+              driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys(date1.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
               //end date//
-              driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/27/2022");
+              driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys(date2.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
             
             //Time----
         driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("11:00 A");
@@ -84,8 +97,10 @@ public class New_Tournament  {
            driver.findElement(By.xpath("//li[contains(text(),'silver')]")).click();
            Thread.sleep(1000);
            //close on date//
-           driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[6]/div[4]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/24/2022");
-           driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[6]/div[5]/div/div[3]/div/div/input")).sendKeys("05/19/2022");
+           LocalDate date3 =  LocalDate.now().plusDays(4);
+           LocalDate date4 =  LocalDate.now().plusDays(2);
+           driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[6]/div[4]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys(date3.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+           driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[6]/div[5]/div/div[3]/div/div/input")).sendKeys(date4.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
            //End At//
    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[6]/div[6]/div/div[3]/div/div/input")).sendKeys("08:00 P");
    Thread.sleep(1000);
@@ -97,13 +112,15 @@ public class New_Tournament  {
              Thread.sleep(1000);
            driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/a/div/img")).click();
            //  driver.findElement(By.xpath("//body/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/a[1]")).click();
-             driver.findElement(By.xpath("//li[contains(text(),'Pooja Rathore')]")).click();
+             driver.findElement(By.xpath("//li[contains(text(),'Test_applination')]")).click();
              Thread.sleep(1000);
              driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[2]/div/div/button")).click();
        //Details field---
+             //Pool field//
          driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[8]/div[2]/div[1]/div[1]/div[4]/a[1]/div[1]/img[1]")).click();
 	  Thread.sleep(1000);
-         driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[1]/div/div/div[8]/div[2]/div/div/div[4]/a/div/span/ul/li[199]")).click();
+	  //name of the pool code//
+         driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[1]/div/div/div[8]/div[2]/div/div/div[4]/a/div/span/ul/li[211]")).click();
          //season--
          driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[8]/div[3]/div[1]/div[1]/div[4]/a[1]/div[1]/img[1]")).click();
 	Thread.sleep(1000);
@@ -183,7 +200,7 @@ public class New_Tournament  {
     //Hamburger icon//
     Thread.sleep(3000);
     driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]/img[1]")).click();
-    Thread.sleep(2000);
+    Thread.sleep(20000);
     driver.findElement(By.xpath("//li[contains(text(),'Go Live')]")).click();
     Thread.sleep(2000);
     //event field click//
@@ -205,14 +222,24 @@ public class New_Tournament  {
     
     int num_teams = 9;
     int num_players = 2;
-    
+   // Thread.sleep(1000000);
+    boolean exception = false;
     for (int i = 2; i <= num_teams; i++){
+    	
+    	if(i> num_teams) {
+    		break;
+    	}
     	
     	String xPathTeam = "/html/body/div/div/div[2]/div/div[3]/div[1]/div/div/div/div[7]/div/div[2]/div/div/div["+Integer.toString(i);
     	for(int j = 1; j<=num_players; j++) {
     		String xPathPlayer = xPathTeam + "]/div[2]/div["+Integer.toString(j)+"]/div/div[4]/div/div/img";
-    		//Thread.sleep(300);
-    		driver.findElement(By.xpath(xPathPlayer)).click();
+    		Thread.sleep(300);
+    		try {    		
+    			driver.findElement(By.xpath(xPathPlayer)).click();
+    		}catch(NoSuchElementException ex) {
+    			exception = true;
+    			break;
+    		}
     		Thread.sleep(200);
     		String xPathSearchBox = "/html/body/div/div/div[2]/div/div[3]/div[1]/div/div/div/div[7]/div/div[2]/div/div/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div/div[4]/div/div/span/div[1]/div[2]/input";
     		driver.findElement(By.xpath(xPathSearchBox)).sendKeys("p");
@@ -238,6 +265,7 @@ public class New_Tournament  {
     	if(i%2!=0) {    		
     		js.executeScript("window.scrollBy(0,50)", "");
     	}
+    	if(exception == true) break;
     }
     Thread.sleep(2000);
     driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[3]/div[2]/div[2]/div")).click();
@@ -336,15 +364,87 @@ Thread.sleep(1000);
 driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/div[2]/div[2]/div")).click();
 Thread.sleep(1000);
 driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[2]/div/button[2]")).click();
+//Thread.sleep(10000000);
+//bracket logic//
+int num_matches= 4;
+int num_teams_of_brackets=2;
+for(int h=1; h<=3; h++)
+{
+	
+	for(int i=1;i<=num_matches;i++){
+	//	if(i>2 && i%2!=0) {
+	//	}
+		for(int j=1;j<=num_teams_of_brackets;j++){
+			Thread.sleep(3000);
+			for(int k=1; k<=3;k++){
+				
+		//    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).clear();
+			    int randomNumber = ThreadLocalRandom.current().nextInt(1, 25 + 1 );
+			    try {
+				    if(randomNumber<10) {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(h)+"]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys("0"+Integer.toString(randomNumber));
+				    }else {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(h)+"]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys(Integer.toString(randomNumber));
+				    }
+			    }catch(NoSuchElementException ex) {
+			    	continue;
+			    }catch(ElementNotInteractableException ex) {
+			    	continue;
+			    }
+			}
+		}
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).click();
+//		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).sendKeys(Keys.ARROW_DOWN);
+//		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).sendKeys(Keys.ARROW_UP);
+		js.executeScript("window.scrollBy(0,40)", "");
+		Thread.sleep(50);
+		js.executeScript("window.scrollBy(0,-10)", "");
+		Thread.sleep(50);
+		Thread.sleep(40000);
+	}
 
+}
 
-Thread.sleep(80000);
+//
+////bracket logic for second stage//
+//int num_matches_of_second_stage= num_matches/2;
+//int num_teams_of_brackets_of_second_stage=2;
+//for(int i=1;i<=num_matches_of_second_stage;i++){
+////	if(i>2 && i%2!=0) {
+////	}
+//for(int j=1;j<=num_teams_of_brackets_of_second_stage;j++){
+//	for(int k=1; k<=3;k++){
+//////		    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).clear();
+//		    int randomNumber = ThreadLocalRandom.current().nextInt(1, 25 + 1 );
+//		    try {
+//			    if(randomNumber<10) {		    	
+//			    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys("0"+Integer.toString(randomNumber));
+//			    }else {		    	
+//			    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys(Integer.toString(randomNumber));
+//			    }
+//		    }catch(NoSuchElementException ex) {
+//		    	continue;
+//		    }catch(ElementNotInteractableException ex) {
+//		    	continue;
+//		    }
+//		}
+//	}
+//	Thread.sleep(60000);
+//}
+
+///html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[1]/div[4]/div/input[1]
+///html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[2]/div[4]/div/input[1]
+
+///html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div[1]/div[4]/div/input[1]
+Thread.sleep(5000000);
        driver.quit();
 
 	}
 }
 
 	
+
 
 
 

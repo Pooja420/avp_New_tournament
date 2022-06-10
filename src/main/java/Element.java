@@ -30,11 +30,11 @@ public class Element {
     		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50));
     		//driver.get("https://www.google.com/");
     		//driver.get("https://avp-league-management.herokuapp.com/");
-    		driver.get("https://promoter.applination.in/");
+    		driver.get("http://34.130.141.211/");
     		Thread.sleep(2000);
     		driver.manage().window().maximize();
     		
-    		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("ashishgargvdoit@gmail.com");
+    		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("jamesbond101@gmail.com");
     		driver.findElement(By.xpath("//input[@name='email']")).sendKeys(Keys.TAB);
 
     		Thread.sleep(1000);
@@ -49,50 +49,81 @@ public class Element {
     		    driver.findElement(By.xpath("//div[contains(text(),'+ New Tournament')]")).click();
     		   // driver.findElement(By.xpath=//div[contains(text(),'+ New Tournament')])).click();
     		    
-    		    driver.findElement(By.cssSelector(".event-input")).sendKeys("AVP Cricket123");
+    		    driver.findElement(By.cssSelector(".event-input")).sendKeys("Applin Cricket123");
     		    driver.findElement(By.id("exampleFormControlTextarea1")).click();
   		    driver.findElement(By.id("exampleFormControlTextarea1")).sendKeys("Cricket1 event");
   		    Thread.sleep(2000);
 //    		    JavascriptExecutor js = (JavascriptExecutor) driver;
 //    			js.executeScript("arguments[0].scrollIntoView(true)",driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/img[1]")));
-               driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/img[1]")).click();
-         Thread.sleep(1000);
-                  driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/span[1]/div[1]/div[2]")).click();
-               driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/span[1]/div[2]/div[2]")).click();
-              // Thread.sleep(2000);
-         
-               //Date code----
-              
-              driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/22/2022");
-              driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/28/2022");
-            
-            //Time----
-        driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("11:00 A");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/button[1]")).click();
-        
-           //Registration---
-           driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[6]/div[2]/div[1]/div[1]/div[3]/div[2]/a[1]/div[1]/img[1]")).click();
-           Thread.sleep(100);
-           driver.findElement(By.xpath("//li[contains(text(),'Yes')]")).click();
-           driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[6]/div[3]/div[1]/div[1]/div[4]/a[1]/div[1]/img[1]")).click();
-          Thread.sleep(1000);
-           driver.findElement(By.xpath("//li[contains(text(),'silver')]")).click();
+  		   driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/img[1]")).click();
            Thread.sleep(1000);
-           driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[6]/div[4]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/21/2022");
-           driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[6]/div[5]/div/div[3]/div/div/input")).sendKeys("05/18/2022");
-   driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[6]/div[6]/div/div[3]/div/div/input")).sendKeys("08:00 P");
-   Thread.sleep(1000);
-          driver.findElement(By.xpath("/html/body/div[7]/div/div/div/div/div[2]/ul/li[2]/button")).click();
-    
+                    driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/span[1]/div[1]/div[2]")).click();
+                 driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/a[1]/div[1]/span[1]/div[2]/div[2]")).click();
+                // Thread.sleep(2000);
+           
+                 //Date code----
+                
+                driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("06/04/2022");
+                //end date//
+               // driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("05/28/2022");
+                Thread.sleep(2000);
+              //closes on date//
+              //close on date//
+                driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div[4]/div[4]/div/div[3]/div/div/input")).sendKeys("06/02/2022");
+                driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div[4]/div[5]/div/div[3]/div/div/input")).sendKeys("05/01/2022");
+                
+              //Time----
+          driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]")).sendKeys("11:00 A");
+          Thread.sleep(1000);
+          driver.findElement(By.xpath("/html/body/div[5]/div/div/div/div/div[2]/ul/li[2]/button")).click();
+          //division template//
+          Thread.sleep(1000);
+          //template-----
+          driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div[6]/div[1]/img")).click();
+          Thread.sleep(1000);
+          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[1]/div/a/div/img")).click();
+            driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[1]/div/a/div/span/ul/li[652]")).click();
+//  done//
+            driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[2]/div/div/button")).click();
+            //new button//
+//          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]")).click();
+//          //age bracket//
+//          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/img")).click();
+//          //click dropdown//
+//          Thread.sleep(1000);
+//          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[2]]")).click();
+//          //next//
+//          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]")).click();
+//          Thread.sleep(1000);
+//          //Girls//
+//          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label/span[1]")).click();
+//            //next button//
+//          driver.findElement(By.xpath("/html/body/div[6]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]")).click();
+//            
+            Thread.sleep(1000);
+             //Registration---
+             driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div[7]/div[2]/div/div/div[3]/div[2]/a/div/img")).click();
+             Thread.sleep(100);
+             driver.findElement(By.xpath("//li[contains(text(),'Yes')]")).click();
+//             driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[6]/div[3]/div[1]/div[1]/div[4]/a[1]/div[1]/img[1]")).click();
+//            Thread.sleep(1000);
+//             driver.findElement(By.xpath("//li[contains(text(),'silver')]")).click();
+       Thread.sleep(1000);
+             
+             //End At//
+       driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div[7]/div[3]/div/div[3]/div/div/input")).sendKeys("08:00 P");
+     Thread.sleep(1000);
+     driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div[1]/div/div/div[7]/div[3]/div/div[3]/div/div/input")).click();
+            driver.findElement(By.xpath("/html/body/div[7]/div/div/div/div/div[2]/ul/li[2]/button")).click();
+      
            //template-----
-           driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[7]/div[1]/img")).click();
-             driver.findElement(By.xpath("//div[contains(text(),'Template')]")).click();
-             Thread.sleep(1000);
-             driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/a/div/img")).click();
-             driver.findElement(By.xpath("//li[contains(text(),'Pooja Rathore')]")).click();
-             Thread.sleep(1000);
-             driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[2]/div/div/button")).click();
+//           driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/div[7]/div[1]/img")).click();
+//             driver.findElement(By.xpath("//div[contains(text(),'Template')]")).click();
+//             Thread.sleep(1000);
+//             driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/a/div/img")).click();
+//             driver.findElement(By.xpath("//li[contains(text(),'Pooja Rathore')]")).click();
+//             Thread.sleep(1000);
+//             driver.findElement(By.xpath("/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[2]/div/div/button")).click();
        //Details field---
          driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[8]/div[2]/div[1]/div[1]/div[4]/a[1]/div[1]/img[1]")).click();
 	  Thread.sleep(1000);

@@ -95,5 +95,385 @@ set1
   // Game 2 Team 1 Set 1
   /html/body/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div/div[2i]/div/div[4]/div[1]/div[2]/div[3]/div[2]/div[2]/div[2]/input
   
+  
+  
+  
+  
+ Bracket logic
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[1]/div[4]/div/input[1]
  
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[1]/div[4]/div/input[2]
+ 
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[1]/div[4]/div/input[3]
+ 
+ int num_matches= 4;
+ int num_teams=2;
+ for(int i=1;i<=num_matches;i++){
+ 	for(int j=1;j<=num_teams;j++){
+ 	for(int k=1; k<=3;k++){
+ 	        driver.findelement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]").sendKeys(Integer.toString(ThreadLocalRandom.current().nextInt(0, 25 + 1)));
+ }}}
+ //second row//
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1i]/div[2]/div[2j]/div[4]/div/input[1k]
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[2]/div[4]/div/input[2]
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[2]/div[4]/div/input[3]
+ 
+ 
+ //second bracket 1 row//
+ /html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div[1]/div[4]/div/input[1]
+ 
+ 
+ ["+Integer.toString(i)+"]/div/div[4]/div["+Integer.toString(j)+"]/div[2]/div[3]/div[2]/div["+Integer.toString(k*2)+"]/div[2]/input")).sendKeys(Integer.toString(ThreadLocalRandom.current().nextInt(0, 25 + 1)));
+ 
+ 
+ 
+ //bracket logic//
+		int num_matches= 4;
+		int num_teams_of_brackets=2;
+		for(int i=1;i<=num_matches;i++){
+			if(i>2 && i%2!=0) {
+				Thread.sleep(8000);
+			}
+			for(int j=1;j<=num_teams_of_brackets;j++){
+				for(int k=1; k<=3;k++){
+				    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).clear();
+				    int randomNumber = ThreadLocalRandom.current().nextInt(1, 25 + 1 );
+				    if(randomNumber<10) {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys("0"+Integer.toString(randomNumber));
+				    }
+				    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys(Integer.toString(randomNumber));
+				}
+			}
+		}
+		int n=5;
+
+	    for (int i =1;i<n;i++) {
+	    		
+	// Locate the Source by By.xpath.
+	    	String path= "/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(i)+"]/div[2]/div[2]/div[2]";
+	      WebElement source = driver.findElement(By.xpath(path)); 
+
+//	// Create an object of actions class  
+Actions action = new Actions(driver); 
+
+    if(i==(n-1))
+    {
+
+	            action.clickAndHold(source).moveByOffset(5,-256).pause(2).moveByOffset(-5,-268).pause(2).release().perform();
+
+	            Thread.sleep(2);
+    }
+	        else; 
+	        {
+	            action.clickAndHold(source).moveByOffset(5,-10).pause(2).moveByOffset(-5,210).pause(2).release().perform();
+
+	            Thread.sleep(2);
+    }
+	    }
+
+		}
+		
+		
+		//bracket5 team1 set1
+		/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[1]/div[4]/div/input[1]
+		set2
+		/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[1]/div[4]/div/input[2]
+		
+		//bracket5 team2 set1
+		/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[1]/div[2]/div[2]/div[4]/div/input[1]
+	
+		//bracket6 team2 set1
+		/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div[2]/div[2]/div[2]/div[4]/div/input[1]
+		
+		
+		bracketlogic// line no 366
+		//bracket logic//
+int num_matches= 4;
+int num_teams_of_brackets=2;
+for(int h=1; h<=3; h++)
+{
+	
+	for(int i=1;i<=num_matches;i++){
+	//	if(i>2 && i%2!=0) {
+	//	}
+		for(int j=1;j<=num_teams_of_brackets;j++){
+			for(int k=1; k<=3;k++){
+		//    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).clear();
+			    int randomNumber = ThreadLocalRandom.current().nextInt(1, 25 + 1 );
+			    try {
+				    if(randomNumber<10) {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(h)+"]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys("0"+Integer.toString(randomNumber));
+				    }else {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(h)+"]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys(Integer.toString(randomNumber));
+				    }
+			    }catch(NoSuchElementException ex) {
+			    	continue;
+			    }catch(ElementNotInteractableException ex) {
+			    	continue;
+			    }
+			}
+		}
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).click();
+//		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).sendKeys(Keys.ARROW_DOWN);
+//		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).sendKeys(Keys.ARROW_UP);
+		js.executeScript("window.scrollBy(0,40)", "");
+		Thread.sleep(50);
+		js.executeScript("window.scrollBy(0,-10)", "");
+		Thread.sleep(50);
+		Thread.sleep(40000);
+	}
+
+}
+		
+		
+	//////////////////////////	
+		
+		//bracket logic//
+int num_matches= 4;
+int num_teams_of_brackets=2;
+for(int h=1; h<=3; h++)
+{
+	
+	for(int i=1;i<=num_matches;i++){
+	//	if(i>2 && i%2!=0) {
+	//	}
+		for(int j=1;j<=num_teams_of_brackets;j++){
+			for(int k=1; k<=3;k++){
+		//    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).clear();
+			    int randomNumber = ThreadLocalRandom.current().nextInt(1, 25 + 1 );
+			    try {
+				    if(randomNumber<10) {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(h)+"]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys("0"+Integer.toString(randomNumber));
+				    }else {		    	
+				    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div["+Integer.toString(h)+"]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys(Integer.toString(randomNumber));
+				    }
+			    }catch(NoSuchElementException ex) {
+			    	continue;
+			    }catch(ElementNotInteractableException ex) {
+			    	continue;
+			    }
+			}
+		}
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).click();
+//		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).sendKeys(Keys.ARROW_DOWN);
+//		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]")).sendKeys(Keys.ARROW_UP);
+		js.executeScript("window.scrollBy(0,40)", "");
+		Thread.sleep(50);
+		js.executeScript("window.scrollBy(0,-10)", "");
+		Thread.sleep(50);
+		Thread.sleep(40000);
+	}
+
+}
+
+//
+////bracket logic for second stage//
+//int num_matches_of_second_stage= num_matches/2;
+//int num_teams_of_brackets_of_second_stage=2;
+//for(int i=1;i<=num_matches_of_second_stage;i++){
+////	if(i>2 && i%2!=0) {
+////	}
+//	for(int j=1;j<=num_teams_of_brackets_of_second_stage;j++){
+//		for(int k=1; k<=3;k++){
+////		    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).clear();
+//		    int randomNumber = ThreadLocalRandom.current().nextInt(1, 25 + 1 );
+//		    try {
+//			    if(randomNumber<10) {		    	
+//			    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys("0"+Integer.toString(randomNumber));
+//			    }else {		    	
+//			    	driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div["+Integer.toString(i)+"]/div[2]/div["+Integer.toString(j)+"]/div[4]/div/input["+Integer.toString(k)+"]")).sendKeys(Integer.toString(randomNumber));
+//			    }
+//		    }catch(NoSuchElementException ex) {
+//		    	continue;
+//		    }catch(ElementNotInteractableException ex) {
+//		    	continue;
+//		    }
+//		}
+//	}
+//	Thread.sleep(60000);
+//}
+
+///html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[1]/div[4]/div/input[1]
+///html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[1]/div[2]/div[2]/div[4]/div/input[1]
+
+///html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div[1]/div[4]/div/input[1]
+Thread.sleep(5000000);
+       driver.quit();
+
+	}
+}
+
+	
+		//Add New Templates//
+		//New button//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+		
+		//Age bracket dropdown//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/img
+		//adult//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[1]
+		//mother-son//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[7]
+		//Next//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+		//Boys//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label/input
+		//Girls//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label/input
+		//Next//
+		/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+	
+	
+	
+i->1:3; j->1:3 if(i==3) j->1:2
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[i]/label[j]/input
+
+//Adult division//
+//open//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+//U26//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label[1]/input
+//45+//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[2]/input
+		
+//Age range for division
+Open	
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+45+
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[2]/input
+U26
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label[1]/input
+		
+//Age division select//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+//11U//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+//14U/
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label[1]/input
+
+//12U//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[2]/input
+//15U//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label[2]/input
+
+//13U//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[3]/input
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Skills//
+//Club//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+//High- school//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[2]/input
+//Gold//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[3]/input
+//Next button//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Level group//
+//Star//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label/input
+//star 4//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[4]/label/input
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Total number of team//
+//Dropdown//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/img
+//select 8 team//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[5]
+// 16 team//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[13]
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Player division//
+//Dropdown//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/img
+////2v2//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[1]
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[2]
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Discount section//
+//Aplly coupouns//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/h1/div[1]/label/input
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[3]/button[2]
+
+//Early bird//
+//Yes//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/label[1]/input
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Early bird date//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/div/div
+
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Early bird pric//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div[1]/div/input
+
+//Normal entry//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/input
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//LAte entry//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/input
+//Next//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[2]/button[2]
+
+//Division template name//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/label[1]/input
+//sAVE//
+/html/body/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/button
+
+
+//Adult Men's
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/label[1]/input
+//Adult Women's
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/label[2]/input
+
+
+//Junior Boys
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label/input
+//Junior Girls
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[2]/label/input
+
+
+//dinsour//
+Mens//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/label[1]/input
+//Women's//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/label[2]/input
+
+
+
+//4 father-daughter//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[4]
+//5 father- son//
+
+// Father Daughter
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+// Father Son
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+// Mother Daughter
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+// Mother Son
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div[1]/label[1]/input
+
+//Total number of team allowed//
+//8 teams//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[5]
+//10 teams//
+/html/body/div[8]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/a/div/span/ul/li[7]
+
  
